@@ -11,6 +11,26 @@
 		366694B22BF8ED41007A22E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694B12BF8ED41007A22E9 /* ContentView.swift */; };
 		366694B42BF8ED43007A22E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366694B32BF8ED43007A22E9 /* Assets.xcassets */; };
 		366694B72BF8ED43007A22E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366694B62BF8ED43007A22E9 /* Preview Assets.xcassets */; };
+		366694C72BF8F012007A22E9 /* RemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694C62BF8F012007A22E9 /* RemoteData.swift */; };
+		366694CA2BF8F0DB007A22E9 /* SSLPinningSecureURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694C92BF8F0DB007A22E9 /* SSLPinningSecureURLSession.swift */; };
+		366694CC2BF8F1F2007A22E9 /* SSLPinningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694CB2BF8F1F2007A22E9 /* SSLPinningDelegate.swift */; };
+		366694CE2BF8F22A007A22E9 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694CD2BF8F22A007A22E9 /* Crypto.swift */; };
+		366694D12BF8F264007A22E9 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694D02BF8F263007A22E9 /* Endpoints.swift */; };
+		366694D32BF8F327007A22E9 /* URLRequestRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694D22BF8F327007A22E9 /* URLRequestRemote.swift */; };
+		366694D52BF8F398007A22E9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694D42BF8F398007A22E9 /* Repository.swift */; };
+		366694D72BF8F3E0007A22E9 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694D62BF8F3E0007A22E9 /* PokemonModel.swift */; };
+		366694D92BF8F404007A22E9 /* URLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694D82BF8F404007A22E9 /* URLProtocol.swift */; };
+		366694DB2BF8F410007A22E9 /* RemoteDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694DA2BF8F410007A22E9 /* RemoteDataProtocol.swift */; };
+		366694DD2BF8F423007A22E9 /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694DC2BF8F423007A22E9 /* RepositoryProtocol.swift */; };
+		366694E02BF8F4FC007A22E9 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694DF2BF8F4FC007A22E9 /* RootViewModel.swift */; };
+		366694E22BF8F563007A22E9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694E12BF8F563007A22E9 /* RootView.swift */; };
+		366694E42BF8F6E8007A22E9 /* KeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694E32BF8F6E8007A22E9 /* KeyChainHelper.swift */; };
+		366694E62BF8F715007A22E9 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694E52BF8F715007A22E9 /* Authentication.swift */; };
+		366694E82BF903A6007A22E9 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694E72BF903A6007A22E9 /* PokemonViewModel.swift */; };
+		366694EB2BF9041D007A22E9 /* PokemonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694EA2BF9041D007A22E9 /* PokemonListView.swift */; };
+		366694ED2BF90440007A22E9 /* PokemonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694EC2BF90440007A22E9 /* PokemonRowView.swift */; };
+		366694EF2BF90468007A22E9 /* PokemonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694EE2BF90468007A22E9 /* PokemonDetailView.swift */; };
+		366694F12BF90D6C007A22E9 /* pokeapi.cer in Resources */ = {isa = PBXBuildFile; fileRef = 366694F02BF90D6C007A22E9 /* pokeapi.cer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +39,26 @@
 		366694B12BF8ED41007A22E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		366694B32BF8ED43007A22E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		366694B62BF8ED43007A22E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		366694C62BF8F012007A22E9 /* RemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteData.swift; sourceTree = "<group>"; };
+		366694C92BF8F0DB007A22E9 /* SSLPinningSecureURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLPinningSecureURLSession.swift; sourceTree = "<group>"; };
+		366694CB2BF8F1F2007A22E9 /* SSLPinningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLPinningDelegate.swift; sourceTree = "<group>"; };
+		366694CD2BF8F22A007A22E9 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		366694D02BF8F263007A22E9 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		366694D22BF8F327007A22E9 /* URLRequestRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestRemote.swift; sourceTree = "<group>"; };
+		366694D42BF8F398007A22E9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		366694D62BF8F3E0007A22E9 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
+		366694D82BF8F404007A22E9 /* URLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocol.swift; sourceTree = "<group>"; };
+		366694DA2BF8F410007A22E9 /* RemoteDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataProtocol.swift; sourceTree = "<group>"; };
+		366694DC2BF8F423007A22E9 /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
+		366694DF2BF8F4FC007A22E9 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		366694E12BF8F563007A22E9 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		366694E32BF8F6E8007A22E9 /* KeyChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainHelper.swift; sourceTree = "<group>"; };
+		366694E52BF8F715007A22E9 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		366694E72BF903A6007A22E9 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
+		366694EA2BF9041D007A22E9 /* PokemonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListView.swift; sourceTree = "<group>"; };
+		366694EC2BF90440007A22E9 /* PokemonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRowView.swift; sourceTree = "<group>"; };
+		366694EE2BF90468007A22E9 /* PokemonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailView.swift; sourceTree = "<group>"; };
+		366694F02BF90D6C007A22E9 /* pokeapi.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pokeapi.cer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +91,10 @@
 		366694AE2BF8ED41007A22E9 /* DesarrolloSeguroRocio */ = {
 			isa = PBXGroup;
 			children = (
-				366694AF2BF8ED41007A22E9 /* DesarrolloSeguroRocioApp.swift */,
-				366694B12BF8ED41007A22E9 /* ContentView.swift */,
-				366694B32BF8ED43007A22E9 /* Assets.xcassets */,
-				366694B52BF8ED43007A22E9 /* Preview Content */,
+				366694C02BF8EE59007A22E9 /* App */,
+				366694BF2BF8EE52007A22E9 /* Presentation */,
+				366694BE2BF8EE4B007A22E9 /* Domain */,
+				366694BD2BF8EE44007A22E9 /* Data */,
 			);
 			path = DesarrolloSeguroRocio;
 			sourceTree = "<group>";
@@ -62,9 +102,125 @@
 		366694B52BF8ED43007A22E9 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				366694B32BF8ED43007A22E9 /* Assets.xcassets */,
 				366694B62BF8ED43007A22E9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		366694BD2BF8EE44007A22E9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				366694C32BF8EECD007A22E9 /* Utils */,
+				366694C22BF8EEC1007A22E9 /* Repository */,
+				366694C12BF8EEBB007A22E9 /* Remote */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		366694BE2BF8EE4B007A22E9 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				366694C52BF8EEE9007A22E9 /* Protocol */,
+				366694C42BF8EEE2007A22E9 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		366694BF2BF8EE52007A22E9 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				366694E92BF903AE007A22E9 /* Pokemon */,
+				366694DE2BF8F4EF007A22E9 /* RootView */,
+				366694B52BF8ED43007A22E9 /* Preview Content */,
+				366694B12BF8ED41007A22E9 /* ContentView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		366694C02BF8EE59007A22E9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				366694AF2BF8ED41007A22E9 /* DesarrolloSeguroRocioApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		366694C12BF8EEBB007A22E9 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				366694C82BF8F0B9007A22E9 /* SSLPining */,
+				366694C62BF8F012007A22E9 /* RemoteData.swift */,
+				366694D02BF8F263007A22E9 /* Endpoints.swift */,
+				366694D22BF8F327007A22E9 /* URLRequestRemote.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		366694C22BF8EEC1007A22E9 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				366694D42BF8F398007A22E9 /* Repository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		366694C32BF8EECD007A22E9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				366694E32BF8F6E8007A22E9 /* KeyChainHelper.swift */,
+				366694E52BF8F715007A22E9 /* Authentication.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		366694C42BF8EEE2007A22E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				366694D62BF8F3E0007A22E9 /* PokemonModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		366694C52BF8EEE9007A22E9 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				366694D82BF8F404007A22E9 /* URLProtocol.swift */,
+				366694DA2BF8F410007A22E9 /* RemoteDataProtocol.swift */,
+				366694DC2BF8F423007A22E9 /* RepositoryProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		366694C82BF8F0B9007A22E9 /* SSLPining */ = {
+			isa = PBXGroup;
+			children = (
+				366694F02BF90D6C007A22E9 /* pokeapi.cer */,
+				366694C92BF8F0DB007A22E9 /* SSLPinningSecureURLSession.swift */,
+				366694CB2BF8F1F2007A22E9 /* SSLPinningDelegate.swift */,
+				366694CD2BF8F22A007A22E9 /* Crypto.swift */,
+			);
+			path = SSLPining;
+			sourceTree = "<group>";
+		};
+		366694DE2BF8F4EF007A22E9 /* RootView */ = {
+			isa = PBXGroup;
+			children = (
+				366694DF2BF8F4FC007A22E9 /* RootViewModel.swift */,
+				366694E12BF8F563007A22E9 /* RootView.swift */,
+			);
+			path = RootView;
+			sourceTree = "<group>";
+		};
+		366694E92BF903AE007A22E9 /* Pokemon */ = {
+			isa = PBXGroup;
+			children = (
+				366694E72BF903A6007A22E9 /* PokemonViewModel.swift */,
+				366694EA2BF9041D007A22E9 /* PokemonListView.swift */,
+				366694EC2BF90440007A22E9 /* PokemonRowView.swift */,
+				366694EE2BF90468007A22E9 /* PokemonDetailView.swift */,
+			);
+			path = Pokemon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +283,7 @@
 			files = (
 				366694B72BF8ED43007A22E9 /* Preview Assets.xcassets in Resources */,
 				366694B42BF8ED43007A22E9 /* Assets.xcassets in Resources */,
+				366694F12BF90D6C007A22E9 /* pokeapi.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +294,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366694CE2BF8F22A007A22E9 /* Crypto.swift in Sources */,
+				366694D92BF8F404007A22E9 /* URLProtocol.swift in Sources */,
+				366694D32BF8F327007A22E9 /* URLRequestRemote.swift in Sources */,
+				366694DB2BF8F410007A22E9 /* RemoteDataProtocol.swift in Sources */,
+				366694CA2BF8F0DB007A22E9 /* SSLPinningSecureURLSession.swift in Sources */,
+				366694EF2BF90468007A22E9 /* PokemonDetailView.swift in Sources */,
+				366694DD2BF8F423007A22E9 /* RepositoryProtocol.swift in Sources */,
+				366694D72BF8F3E0007A22E9 /* PokemonModel.swift in Sources */,
 				366694B22BF8ED41007A22E9 /* ContentView.swift in Sources */,
+				366694E62BF8F715007A22E9 /* Authentication.swift in Sources */,
+				366694E02BF8F4FC007A22E9 /* RootViewModel.swift in Sources */,
+				366694EB2BF9041D007A22E9 /* PokemonListView.swift in Sources */,
+				366694ED2BF90440007A22E9 /* PokemonRowView.swift in Sources */,
+				366694D12BF8F264007A22E9 /* Endpoints.swift in Sources */,
+				366694C72BF8F012007A22E9 /* RemoteData.swift in Sources */,
+				366694E42BF8F6E8007A22E9 /* KeyChainHelper.swift in Sources */,
+				366694CC2BF8F1F2007A22E9 /* SSLPinningDelegate.swift in Sources */,
+				366694E82BF903A6007A22E9 /* PokemonViewModel.swift in Sources */,
 				366694B02BF8ED41007A22E9 /* DesarrolloSeguroRocioApp.swift in Sources */,
+				366694D52BF8F398007A22E9 /* Repository.swift in Sources */,
+				366694E22BF8F563007A22E9 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +447,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DesarrolloSeguroRocio/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DesarrolloSeguroRocio/Presentation/Preview Content\"";
 				DEVELOPMENT_TEAM = HS49USZ4GG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -300,7 +476,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DesarrolloSeguroRocio/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DesarrolloSeguroRocio/Presentation/Preview Content\"";
 				DEVELOPMENT_TEAM = HS49USZ4GG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
