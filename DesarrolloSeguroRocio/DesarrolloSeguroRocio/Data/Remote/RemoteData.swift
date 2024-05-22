@@ -8,32 +8,52 @@
 import Foundation
 
 final class RemoteDataSource: RemoteDataSourceProtocol {
+    private let urlRequestHelper: URLRequestHelperProtocol
     
-    // MARK: Properties
-    var urlRequestHelper: URLRequestHelperProtocol
-    
-    // MARK: Init
     init(urlRequestHelper: URLRequestHelperProtocol) {
         self.urlRequestHelper = urlRequestHelper
     }
     
-    // MARK: Functions
-    
-    
-    func getPokemon(name: String) async throws -> Pokemon? {
-        guard let request = urlRequestHelper.getPokemon(name: name) else {
-            return nil
+    func getPokemonList() async throws -> PokemonListResponse {
+        guard let request = urlRequestHelper.getPokemonListRequest() else {
+            throw URLError(.badURL)
         }
         
-        let (data, response) = try await URLSession.shared.data(for: request)
-        
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-            throw URLError(.badServerResponse)
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            print("Raw JSON data: \(String(data: data, encoding: .utf8) ?? "")")
+            
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                throw URLError(.badServerResponse)
+            }
+            
+            let decodedData = try JSONDecoder().decode(PokemonListResponse.self, from: data)
+            // Procesa los datos decodificados aquí
+            return decodedData
+        } catch {
+            print("Error while fetching Pokémon list: \(error)")
+            throw error
+        }
+    }
+    func getPokemonDetailRequest(for pokemon: Pokemon) async throws -> PokemonDetail? {
+        guard let request = urlRequestHelper.getPokemonDetailRequest(for: pokemon) else {
+            throw URLError(.badURL)
         }
         
-        let decoder = JSONDecoder()
-        let pokemon = try decoder.decode(Pokemon.self, from: data)
-        
-        return pokemon
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                throw URLError(.badServerResponse)
+            }
+            
+            let decoder = JSONDecoder()
+            let pokemonDetail = try decoder.decode(PokemonDetail.self, from: data)
+            
+            return pokemonDetail
+        } catch {
+            print("Error while fetching Pokémon detail: \(error)")
+            throw error
+        }
     }
 }

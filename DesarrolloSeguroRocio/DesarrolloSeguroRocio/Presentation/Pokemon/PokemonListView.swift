@@ -8,40 +8,46 @@
 import SwiftUI
 
 struct PokemonListView: View {
-    @ObservedObject var viewModel: PokemonListViewModel
-    
+    @State private var loadedPokemonCompuestos: [PokemonCompuesto] = []
+    @State private var filter: String = ""
+    @StateObject private var viewModel: PokemonViewModel // Remueve la inicialización aquí
+        
+        init() {
+            // Inicializa viewModel con un RemoteDataSource
+            let remoteDataSource = RemoteDataSource(urlRequestHelper: URLRequestHelperImpl(obfuscatedURL: "\(Endpoints().baseURL)\(Endpoints().pokemonEndpoint)"))
+            _viewModel = StateObject(wrappedValue: PokemonViewModel(remoteDataSource: remoteDataSource))
+        }
+        
     var body: some View {
-            NavigationView {
-                ZStack {
-                    // Imagen de fondo
-                    Image("Fondo")
-                        .resizable()
-                        .scaledToFill()
-                        .ignoresSafeArea()
-                        .opacity(0.2) // Ajusta la opacidad según tu
-                    
-                    // Contenido de la vista (lista de Pokémon)
-                    VStack {
-                        if viewModel.isLoading {
-                            ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle())
-                                .padding()
-                        } else {
-                            List(viewModel.pokemonList) { pokemon in
-                                NavigationLink(destination: PokemonDetailView(pokemon: pokemon)) {
-                                    PokemonRowView(pokemon: pokemon)
-                                }
-                            }
+        NavigationView {
+            VStack {
+                if viewModel.isLoading && loadedPokemonCompuestos.isEmpty {
+                    ProgressView("Loading Pokémon...")
+                        .scaleEffect(1.5, anchor: .center)
+                } else {
+                    List(loadedPokemonCompuestos) { pokemonCompuesto in
+                        NavigationLink(destination: PokemonDetailView(pokemonDetail: pokemonCompuesto.pokemonDetail)) {
+                            PokemonRowView(pokemonCompuesto: pokemonCompuesto)
                         }
                     }
-                    .navigationTitle("Pokémon List")
+                    .listStyle(PlainListStyle())
                 }
-                .onAppear {
-                    viewModel.fetchPokemonList()
+            }
+            .navigationTitle("Pokémon List")
+            .onAppear {
+                Task {
+                     viewModel.fetchPokemonList()
                 }
             }
         }
+        .searchable(text: $filter, prompt: Text("Buscar por nombre"))
+        .onChange(of: viewModel.pokemonCompuestoList) { newPokemonCompuestos in
+            loadedPokemonCompuestos = newPokemonCompuestos
+        }
     }
-#Preview{
-    PokemonListView(viewModel: PokemonListViewModel())
+}
+struct PokemonListView_Previews: PreviewProvider {
+    static var previews: some View {
+        PokemonListView()
+    }
 }

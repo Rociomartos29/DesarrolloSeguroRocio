@@ -7,6 +7,6 @@
 
 import Foundation
 protocol RemoteDataSourceProtocol {
-    var urlRequestHelper: URLRequestHelperProtocol { get }
-    func getPokemon(name: String) async throws -> Pokemon?
+    func getPokemonList() async throws -> PokemonListResponse
+    func getPokemonDetailRequest(for pokemon: Pokemon) async throws -> PokemonDetail?
 }

@@ -7,44 +7,60 @@
 
 import Foundation
 
-class PokemonListViewModel: ObservableObject {
+class PokemonViewModel: ObservableObject {
     @Published var pokemonList: [Pokemon] = []
     @Published var isLoading: Bool = false
-    @Published var imageData: [URL: Data] = [:]
+    @Published var selectedPokemonDetail: PokemonDetail?
+    @Published var nextPageURL: String?
+    @Published var pokemonCompuestoList: [PokemonCompuesto] = []
+    
+    private let remoteDataSource: RemoteDataSourceProtocol // Inyectar el RemoteDataSource
+    
+    init(remoteDataSource: RemoteDataSourceProtocol) {
+        self.remoteDataSource = remoteDataSource
+    }
     
     func fetchPokemonList() {
         isLoading = true
         
-        guard let url = URL(string: "\(Endpoints().baseURL)\(Endpoints().pokemonEndpoint)") else {
-            print("Invalid URL")
-            isLoading = false
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            DispatchQueue.main.async {
-                self.isLoading = false
-                
-                guard let data = data, error == nil else {
-                    print("Error fetching data: \(error?.localizedDescription ?? "Unknown error")")
-                    return
+        Task {
+            do {
+                let pokemonListResponse = try await remoteDataSource.getPokemonList()
+                let newPokemonCompuestos = try await createPokemonCompuestos(from: pokemonListResponse.results)
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    self.pokemonCompuestoList = newPokemonCompuestos
                 }
-                
-                do {
-                    let pokemonListResponse = try JSONDecoder().decode(PokemonListResponse.self, from: data)
-                    self.pokemonList = pokemonListResponse.results
- 
-                } catch {
-                    print("Error decoding JSON data: \(error.localizedDescription)")
-                    if let jsonDataString = String(data: data, encoding: .utf8) {
-                        print("JSON data received: \(jsonDataString)")
-                    } else {
-                        print("Unable to convert data to string")
-                    }
+            } catch {
+                print("Error while fetching Pokémon: \(error)")
+                DispatchQueue.main.async {
+                    self.isLoading = false
                 }
             }
         }
-        
-        task.resume()
+    }
+    
+    private func createPokemonCompuestos(from pokemonResults: [PokemonResult]) async throws -> [PokemonCompuesto] {
+        var pokemonCompuestos: [PokemonCompuesto] = []
+        for pokemonResult in pokemonResults {
+            let pokemon = Pokemon(name: pokemonResult.name, url: "\(pokemonResult.url)")
+            do {
+                let pokemonDetail = try await remoteDataSource.getPokemonDetailRequest(for: pokemon)
+                let pokemonCompuesto = PokemonCompuesto(pokemon: pokemon, pokemonDetail: pokemonDetail!)
+                pokemonCompuestos.append(pokemonCompuesto)
+            } catch {
+                throw error
+            }
+        }
+        return pokemonCompuestos
+    }
+    
+    func fetchPokemonDetail(pokemon: Pokemon) async {
+        do {
+            let pokemonDetail = try await remoteDataSource.getPokemonDetailRequest(for: pokemon)
+            self.selectedPokemonDetail = pokemonDetail
+        } catch {
+            print("Error fetching Pokemon detail: \(error)")
+        }
     }
 }

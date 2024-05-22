@@ -6,17 +6,34 @@
 //
 
 import Foundation
+import CryptoKit
 final class URLRequestHelperImpl: URLRequestHelperProtocol {
-    func getPokemon(name: String) -> URLRequest? {
-        guard let url = URL(string: "\(Endpoints().baseURL)\(Endpoints().pokemonEndpoint)") else {
-            
-            print("Error while creating URL from \(Endpoints().baseURL)\(Endpoints().pokemonEndpoint)\(name)")
-            return nil
+    private let obfuscatedURL: String
+
+        init(obfuscatedURL: String) {
+            self.obfuscatedURL = obfuscatedURL
         }
-        print(url)
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
-        
-        return urlRequest
+
+        func getPokemonListRequest() -> URLRequest? {
+            guard let url = URL(string: obfuscatedURL) else {
+                print("Error while creating URL from \(obfuscatedURL)")
+                return nil
+            }
+
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "GET"
+
+            return urlRequest
+        }
+
+        func getPokemonDetailRequest(for pokemon: Pokemon) -> URLRequest? {
+            guard let url = URL(string: pokemon.url) else {
+                return nil
+            }
+
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+
+            return request
+        }
     }
-}

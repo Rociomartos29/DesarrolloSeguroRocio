@@ -8,6 +8,5 @@
 import Foundation
 protocol RepositoryProtocol {
     var remoteDataSource: RemoteDataSourceProtocol { get }
-
-    func getPokemon(name: String) async throws -> Pokemon?
+    func getPokemonList() async throws -> [Pokemon] // Nueva función para obtener la lista de Pokémon
 }

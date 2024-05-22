@@ -7,5 +7,6 @@
 
 import Foundation
 protocol URLRequestHelperProtocol {
-    func getPokemon(name: String) -> URLRequest?
+    func getPokemonListRequest() -> URLRequest? // Nueva función para obtener la solicitud de la lista de Pokémon
+    func getPokemonDetailRequest(for pokemon: Pokemon) -> URLRequest? // Función para obtener la solicitud de detalles de Pokémon
 }

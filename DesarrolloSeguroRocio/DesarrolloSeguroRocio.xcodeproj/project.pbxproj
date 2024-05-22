@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		366694B02BF8ED41007A22E9 /* DesarrolloSeguroRocioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694AF2BF8ED41007A22E9 /* DesarrolloSeguroRocioApp.swift */; };
-		366694B22BF8ED41007A22E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694B12BF8ED41007A22E9 /* ContentView.swift */; };
 		366694B42BF8ED43007A22E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366694B32BF8ED43007A22E9 /* Assets.xcassets */; };
 		366694B72BF8ED43007A22E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366694B62BF8ED43007A22E9 /* Preview Assets.xcassets */; };
 		366694C72BF8F012007A22E9 /* RemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366694C62BF8F012007A22E9 /* RemoteData.swift */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		366694AC2BF8ED41007A22E9 /* DesarrolloSeguroRocio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesarrolloSeguroRocio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		366694AF2BF8ED41007A22E9 /* DesarrolloSeguroRocioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesarrolloSeguroRocioApp.swift; sourceTree = "<group>"; };
-		366694B12BF8ED41007A22E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		366694B32BF8ED43007A22E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		366694B62BF8ED43007A22E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		366694C62BF8F012007A22E9 /* RemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteData.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 				366694E92BF903AE007A22E9 /* Pokemon */,
 				366694DE2BF8F4EF007A22E9 /* RootView */,
 				366694B52BF8ED43007A22E9 /* Preview Content */,
-				366694B12BF8ED41007A22E9 /* ContentView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -302,7 +299,6 @@
 				366694EF2BF90468007A22E9 /* PokemonDetailView.swift in Sources */,
 				366694DD2BF8F423007A22E9 /* RepositoryProtocol.swift in Sources */,
 				366694D72BF8F3E0007A22E9 /* PokemonModel.swift in Sources */,
-				366694B22BF8ED41007A22E9 /* ContentView.swift in Sources */,
 				366694E62BF8F715007A22E9 /* Authentication.swift in Sources */,
 				366694E02BF8F4FC007A22E9 /* RootViewModel.swift in Sources */,
 				366694EB2BF9041D007A22E9 /* PokemonListView.swift in Sources */,
