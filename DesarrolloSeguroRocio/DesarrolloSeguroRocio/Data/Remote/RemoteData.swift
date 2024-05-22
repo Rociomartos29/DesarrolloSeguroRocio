@@ -28,7 +28,7 @@ final class RemoteDataSource: RemoteDataSourceProtocol {
             }
             
             let decodedData = try JSONDecoder().decode(PokemonListResponse.self, from: data)
-            // Procesa los datos decodificados aquí
+          
             return decodedData
         } catch {
             print("Error while fetching Pokémon list: \(error)")

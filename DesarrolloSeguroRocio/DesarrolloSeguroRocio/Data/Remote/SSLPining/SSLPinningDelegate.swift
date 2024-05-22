@@ -34,7 +34,7 @@ class SSLPinningDelegate: NSObject {
             // Imprime el hash de la clave pública del servidor
             print("Server public key hash: \(serverPublicKeyHash)")
             
-            // Clave pública esperada (debes reemplazar esto con el hash de la clave pública esperada)
+            // Clave pública esperada
             let expectedPublicKeyHash = obfuscateURL(url: expectedPublicKey)
             
             // Compara el hash de la clave pública del servidor con el hash de la clave pública esperada
@@ -79,7 +79,7 @@ class SSLPinningDelegate: NSObject {
             // Print the server's public key hash
             print("Server public key hash: \(serverPublicKeyHash)")
             
-            // Expected public key hash (you should replace this with your expected public key hash)
+            // Expected public key hash 
             let expectedPublicKeyHash = obfuscateURL(url: expectedPublicKey)
             
             // Compare the server's public key hash with the expected public key hash

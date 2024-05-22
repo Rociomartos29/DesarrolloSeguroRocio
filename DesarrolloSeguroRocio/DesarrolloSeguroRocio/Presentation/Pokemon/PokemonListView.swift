@@ -10,10 +10,10 @@ import SwiftUI
 struct PokemonListView: View {
     @State private var loadedPokemonCompuestos: [PokemonCompuesto] = []
     @State private var filter: String = ""
-    @StateObject private var viewModel: PokemonViewModel // Remueve la inicialización aquí
+    @StateObject private var viewModel: PokemonViewModel
         
         init() {
-            // Inicializa viewModel con un RemoteDataSource
+           
             let remoteDataSource = RemoteDataSource(urlRequestHelper: URLRequestHelperImpl(obfuscatedURL: "\(Endpoints().baseURL)\(Endpoints().pokemonEndpoint)"))
             _viewModel = StateObject(wrappedValue: PokemonViewModel(remoteDataSource: remoteDataSource))
         }
