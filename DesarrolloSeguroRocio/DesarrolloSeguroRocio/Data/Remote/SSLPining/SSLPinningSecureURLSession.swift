@@ -9,18 +9,21 @@ import Foundation
 
 class SSLPinningSecureURLSession {
     
+    // MARK: - Variables
     let session: URLSession
     
+    // MARK: - Initializers
     init() {
-        let sslPinningDelegate = SSLPinningDelegate(expectedPublicKey: "d3ec0c587004f328b446195927dc6f56f32ebcc389bbec666bcfae7aca04be86")
         session = URLSession(
             configuration: .ephemeral,
-            delegate: sslPinningDelegate,
+            delegate: SSLPinningDelegate(),
             delegateQueue: nil)
     }
-    
-    func makeRequest(url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        let task = session.dataTask(with: url, completionHandler: completionHandler)
-        task.resume()
+}
+
+//MARK: - URLSession extension: shared
+extension URLSession {
+    static var shared: URLSession {
+        return SSLPinningSecureURLSession().session
     }
 }
